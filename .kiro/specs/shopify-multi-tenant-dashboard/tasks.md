@@ -1,6 +1,6 @@
 # Implementation Plan
 
-- [ ] 1. Initialize project structure and dependencies
+- [-] 1. Initialize project structure and dependencies
   - Create Node.js project with TypeScript configuration
   - Install core dependencies (Express, Prisma, @shopify/shopify-api, bcrypt, node-cron)
   - Set up ESLint and Prettier for code quality
