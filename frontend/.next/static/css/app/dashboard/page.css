@@ -1,0 +1,515 @@
+/*!*************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[7].use[3]!./src/components/DashboardLayout.module.css ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************/
+.DashboardLayout_container__nQFo2 {
+  min-height: 100vh;
+  background: #f5f5f5;
+}
+
+.DashboardLayout_header__ED_93 {
+  background: white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.DashboardLayout_headerContent__msBVa {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.DashboardLayout_logo__Z0n1N {
+  font-size: 1.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.DashboardLayout_logoutButton__Y1qdK {
+  padding: 0.5rem 1.5rem;
+  background: #e53e3e;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.DashboardLayout_logoutButton__Y1qdK:hover {
+  background: #c53030;
+}
+
+.DashboardLayout_main__K0naI {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .DashboardLayout_headerContent__msBVa {
+    padding: 1rem;
+  }
+
+  .DashboardLayout_logo__Z0n1N {
+    font-size: 1.25rem;
+  }
+}
+
+/*!*****************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[7].use[3]!./src/components/Loading.module.css ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************/
+.Loading_container__9cS59 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.Loading_spinner__4CfX_ {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #e2e8f0;
+  border-top-color: #667eea;
+  border-radius: 50%;
+  animation: Loading_spin__bAbY4 0.8s linear infinite;
+}
+
+@keyframes Loading_spin__bAbY4 {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.Loading_skeleton__V9rw_ {
+  padding: 1rem;
+}
+
+.Loading_skeletonLine__9C1qu {
+  height: 20px;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: Loading_loading__G8oIV 1.5s ease-in-out infinite;
+  border-radius: 4px;
+  margin-bottom: 0.75rem;
+}
+
+.Loading_skeletonLine__9C1qu:last-child {
+  width: 60%;
+}
+
+@keyframes Loading_loading__G8oIV {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/*!***********************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[7].use[3]!./src/components/ErrorBoundary.module.css ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************/
+.ErrorBoundary_container__Al46B {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+  padding: 2rem;
+}
+
+.ErrorBoundary_content__41Lsk {
+  text-align: center;
+  max-width: 500px;
+}
+
+.ErrorBoundary_title__b3Mik {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #e53e3e;
+  margin-bottom: 1rem;
+}
+
+.ErrorBoundary_message__8ytg7 {
+  color: #718096;
+  margin-bottom: 1.5rem;
+}
+
+.ErrorBoundary_button__UEfVL {
+  padding: 0.75rem 1.5rem;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.ErrorBoundary_button__UEfVL:hover {
+  background: #5568d3;
+}
+
+/*!************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[7].use[3]!./src/components/MetricsSummary.module.css ***!
+  \************************************************************************************************************************************************************************************************************************************************************************************/
+.MetricsSummary_grid__iI4Lf {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 1.5rem;
+  gap: 1.5rem;
+}
+
+.MetricsSummary_card__uc80a {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.MetricsSummary_card__uc80a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.MetricsSummary_cardIcon___HUn_ {
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.75rem;
+}
+
+.MetricsSummary_cardContent__Ap3vT {
+  flex: 1 1;
+}
+
+.MetricsSummary_cardLabel__EmSOc {
+  font-size: 0.875rem;
+  color: #718096;
+  margin-bottom: 0.25rem;
+}
+
+.MetricsSummary_cardValue__bZ2QF {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: #1a202c;
+}
+
+.MetricsSummary_error__6hHMs {
+  background: #fed7d7;
+  color: #c53030;
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.MetricsSummary_retryButton__S_b44 {
+  margin-top: 1rem;
+  padding: 0.5rem 1.5rem;
+  background: #e53e3e;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.MetricsSummary_retryButton__S_b44:hover {
+  background: #c53030;
+}
+
+@media (max-width: 768px) {
+  .MetricsSummary_grid__iI4Lf {
+    grid-template-columns: 1fr;
+  }
+
+  .MetricsSummary_cardValue__bZ2QF {
+    font-size: 1.5rem;
+  }
+}
+
+/*!**********************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[7].use[3]!./src/components/TopCustomers.module.css ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************/
+.TopCustomers_container__vROaQ {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.TopCustomers_title__4jbl2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1a202c;
+  margin-bottom: 1.5rem;
+}
+
+.TopCustomers_list__vL_qK {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.TopCustomers_item__5xcUm {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: #f7fafc;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+
+.TopCustomers_item__5xcUm:hover {
+  background: #edf2f7;
+}
+
+.TopCustomers_rank__w6g0D {
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.875rem;
+}
+
+.TopCustomers_info__ipr8F {
+  flex: 1 1;
+}
+
+.TopCustomers_name__qMV_2 {
+  font-weight: 600;
+  color: #1a202c;
+  margin-bottom: 0.25rem;
+}
+
+.TopCustomers_email__gqpL7 {
+  font-size: 0.875rem;
+  color: #718096;
+}
+
+.TopCustomers_stats__ZFNyh {
+  text-align: right;
+}
+
+.TopCustomers_revenue__kHVNn {
+  font-weight: 700;
+  color: #48bb78;
+  margin-bottom: 0.25rem;
+}
+
+.TopCustomers_orders___zQaF {
+  font-size: 0.875rem;
+  color: #718096;
+}
+
+.TopCustomers_empty__vX6Iq {
+  text-align: center;
+  color: #718096;
+  padding: 2rem;
+}
+
+.TopCustomers_error__TAHtE {
+  background: #fed7d7;
+  color: #c53030;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.TopCustomers_retryButton__4yboX {
+  margin-top: 0.75rem;
+  padding: 0.5rem 1rem;
+  background: #e53e3e;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.TopCustomers_retryButton__4yboX:hover {
+  background: #c53030;
+}
+
+@media (max-width: 768px) {
+  .TopCustomers_item__5xcUm {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .TopCustomers_stats__ZFNyh {
+    text-align: left;
+    width: 100%;
+  }
+}
+
+/*!*********************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[7].use[3]!./src/components/OrdersChart.module.css ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************/
+.OrdersChart_container__aNtNY {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.OrdersChart_title__tHkR6 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1a202c;
+  margin-bottom: 1.5rem;
+}
+
+.OrdersChart_filters__ayMJr {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.OrdersChart_filterGroup__Rqb35 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.OrdersChart_label__sVijn {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #4a5568;
+}
+
+.OrdersChart_input__jrJrg {
+  padding: 0.5rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  font-size: 0.875rem;
+}
+
+.OrdersChart_input__jrJrg:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.OrdersChart_applyButton__1KGSl {
+  padding: 0.5rem 1.5rem;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.OrdersChart_applyButton__1KGSl:hover {
+  background: #5568d3;
+}
+
+.OrdersChart_empty__YbUNw {
+  text-align: center;
+  color: #718096;
+  padding: 2rem;
+}
+
+.OrdersChart_error__qKYYl {
+  background: #fed7d7;
+  color: #c53030;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.OrdersChart_retryButton__97w7W {
+  margin-top: 0.75rem;
+  padding: 0.5rem 1rem;
+  background: #e53e3e;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.OrdersChart_retryButton__97w7W:hover {
+  background: #c53030;
+}
+
+@media (max-width: 768px) {
+  .OrdersChart_filters__ayMJr {
+    flex-direction: column;
+  }
+
+  .OrdersChart_filterGroup__Rqb35 {
+    width: 100%;
+  }
+
+  .OrdersChart_input__jrJrg {
+    flex: 1 1;
+  }
+}
+
+/*!**********************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[7].use[3]!./src/app/dashboard/dashboard.module.css ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************/
+.dashboard_container__Kdrrt {
+  padding: 2rem;
+}
+
+.dashboard_title__16hVG {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: #1a202c;
+}
+
+.dashboard_chartsGrid__x_hsM {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 2rem;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+@media (max-width: 1024px) {
+  .dashboard_chartsGrid__x_hsM {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard_container__Kdrrt {
+    padding: 1rem;
+  }
+
+  .dashboard_title__16hVG {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .dashboard_chartsGrid__x_hsM {
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+}
+
