@@ -10,6 +10,7 @@ interface Metrics {
   totalCustomers: number;
   totalOrders: number;
   totalRevenue: number;
+  averageOrderValue: number;
 }
 
 export default function MetricsSummary() {
@@ -88,6 +89,18 @@ export default function MetricsSummary() {
             <p className={styles.cardLabel}>Total Revenue</p>
             <p className={styles.cardValue}>
               ${metrics.totalRevenue.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+            </p>
+          </div>
+        </div>
+
+        <div className={styles.card}>
+          <div className={styles.cardIcon} style={{ background: '#9f7aea' }}>
+            📊
+          </div>
+          <div className={styles.cardContent}>
+            <p className={styles.cardLabel}>Avg Order Value</p>
+            <p className={styles.cardValue}>
+              ${metrics.averageOrderValue.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
             </p>
           </div>
         </div>
