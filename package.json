@@ -15,9 +15,14 @@
     "setup": "bash scripts/setup.sh",
     "create-admin": "ts-node scripts/create-admin.ts"
   },
-  "keywords": ["shopify", "multi-tenant", "dashboard", "analytics"],
+  "keywords": [
+    "shopify",
+    "multi-tenant",
+    "dashboard",
+    "analytics"
+  ],
   "author": "",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "dependencies": {
     "@prisma/client": "^5.7.0",
     "@shopify/shopify-api": "^9.0.0",
