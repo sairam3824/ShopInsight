@@ -1,60 +1,61 @@
 .container {
   min-height: 100vh;
-  background: #f5f5f5;
+  background: #f8fafc;
+  display: flex;
+}
+
+.contentWrapper {
+  flex: 1;
+  margin-left: 250px;
+  display: flex;
+  flex-direction: column;
 }
 
 .header {
   background: white;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid #e2e8f0;
   position: sticky;
   top: 0;
   z-index: 10;
-}
-
-.headerContent {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 1rem 2rem;
+  height: 70px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
 }
 
-.logo {
-  font-size: 1.5rem;
-  font-weight: 700;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+.headerContent {
+  width: 100%;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .logoutButton {
-  padding: 0.5rem 1.5rem;
-  background: #e53e3e;
-  color: white;
-  border: none;
+  padding: 0.5rem 1.25rem;
+  background: transparent;
+  color: #718096;
+  border: 1px solid #e2e8f0;
   border-radius: 6px;
   font-weight: 600;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: all 0.2s;
 }
 
 .logoutButton:hover {
-  background: #c53030;
+  background: #fee2e2;
+  color: #e53e3e;
+  border-color: #fecaca;
 }
 
 .main {
-  max-width: 1400px;
-  margin: 0 auto;
+  padding: 2rem;
+  flex: 1;
 }
 
-@media (max-width: 768px) {
-  .headerContent {
-    padding: 1rem;
+@media (max-width: 1024px) {
+  .contentWrapper {
+    margin-left: 0;
   }
 
-  .logo {
-    font-size: 1.25rem;
-  }
+  /* Sidebar would need to be hidden/toggle on mobile, but let's keep it simple for now */
 }
