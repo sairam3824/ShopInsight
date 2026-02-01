@@ -6,11 +6,11 @@ A production-ready multi-tenant analytics platform that enables Shopify store ow
 
 This system provides a centralized analytics solution for multiple Shopify stores with:
 
+- **Multi-Tenant Architecture** - Complete data isolation between stores
 - **Secure OAuth Integration** - Connect Shopify stores safely using OAuth 2.0
 - **Automated Data Sync** - Real-time webhooks and periodic polling keep data fresh
-- **Multi-Tenant Architecture** - Complete data isolation between stores
-- **Rich Analytics** - Revenue metrics, customer insights, and order trends
-- **Modern Dashboard** - Clean, responsive UI built with Next.js and React
+- **Rich Analytics Dashboard** - Professional UI with side-navigation, top-selling products, and revenue insights
+- **Data Portability** - Export order history directly to CSV for external reporting
 
 ## Features
 
@@ -19,13 +19,14 @@ This system provides a centralized analytics solution for multiple Shopify store
 - **Shopify Store Connection** - OAuth-based authentication with encrypted token storage
 - **Data Ingestion** - Automatic sync of customers, orders, and products
 - **Real-Time Updates** - Webhook handlers for instant order notifications
-- **Analytics Dashboard** - Key metrics including:
-  - Total customers, orders, and revenue
-  - Top customers by revenue
-  - Order trends over time
-  - Date range filtering
-- **Secure Authentication** - Session-based auth with bcrypt password hashing
-- **Multi-Tenant Isolation** - Complete data separation between stores
+- **Interactive Dashboard** - Modern side-navigation layout featuring:
+  - **Metrics Summary** - Total customers, orders, revenue, and AOV
+  - **Orders Graph** - Interactive time-series data visualization
+  - **Top Customers** - Ranked insights into your most valuable buyers
+  - **Top Products** - Performance tracking for your best-selling items
+- **Store Connect Flow** - Dedicated page for seamless Shopify integration via OAuth
+- **Secure Authentication** - Protected routes with JWT-based sessions and bcrypt hashing
+- **Data Export** - One-click CSV export for offline analysis
 
 ### Technical Highlights
 
@@ -207,9 +208,10 @@ GET    /api/shopify/callback?code=<code>&shop=<shop> - OAuth callback
 
 #### Analytics
 ```
-GET    /api/analytics/summary                        - Dashboard metrics
-GET    /api/analytics/top-customers?limit=5          - Top customers
-GET    /api/analytics/orders?from=<date>&to=<date>   - Filtered orders
+GET    /api/analytics/summary                        - Metrics, Top Products, and Top Customers
+GET    /api/analytics/top-customers?limit=5          - Detailed top customer list
+GET    /api/analytics/orders?from=<date>&to=<date>   - Filtered order history
+GET    /api/analytics/export-orders                  - CSV order data generator
 ```
 
 #### Webhooks
@@ -411,7 +413,8 @@ This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENS
 
 - [ ] Advanced analytics (cohort analysis, LTV)
 - [ ] Multi-currency support
-- [ ] Export functionality (CSV, PDF)
+- [x] Export functionality (CSV)
+- [ ] Export functionality (PDF)
 - [ ] Email notifications
 - [ ] Mobile app
 - [ ] GraphQL API
