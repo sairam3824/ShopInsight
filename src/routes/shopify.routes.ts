@@ -71,7 +71,7 @@ router.get('/callback', async (req: Request, res: Response) => {
 
     // Trigger initial data ingestion
     console.log(`Starting initial ingestion for tenant: ${tenant.shopName}`);
-    
+
     const client = getShopifyClient(tenant);
 
     // Run ingestion in background (don't await)
@@ -87,14 +87,11 @@ router.get('/callback', async (req: Request, res: Response) => {
         console.error(`Initial ingestion failed for tenant ${tenant.shopName}:`, error);
       });
 
-    res.json({
-      message: 'Shopify store connected successfully',
-      tenantId: tenant.id,
-      shopName: tenant.shopName,
-    });
+    const frontendUrl = process.env.FRONTEND_URL || 'http://localhost:3000';
+    res.redirect(`${frontendUrl}/dashboard?connected=true`);
   } catch (error: any) {
     console.error('OAuth callback error:', error);
-    
+
     if (error.message?.includes('Failed to exchange code')) {
       res.status(400).json({
         error: {
