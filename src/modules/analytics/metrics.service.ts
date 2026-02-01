@@ -2,6 +2,7 @@ import prisma from '../../config/database';
 import {
   DashboardMetrics,
   TopCustomer,
+  TopProduct,
   OrdersByDate,
   MetricsService as IMetricsService,
 } from './types';
@@ -30,12 +31,34 @@ class MetricsServiceImpl implements IMetricsService {
     // Get top customers
     const topCustomers = await this.getTopCustomers(tenantId, 5);
 
+    // Get top products
+    const topProducts = await this.getTopProducts(tenantId, 5);
+
+    const averageOrderValue = totalOrders > 0 ? totalRevenue / totalOrders : 0;
+
     return {
       totalCustomers,
       totalOrders,
       totalRevenue,
+      averageOrderValue,
       topCustomers,
+      topProducts,
     };
+  }
+
+  async getTopProducts(tenantId: string, limit: number): Promise<TopProduct[]> {
+    const products = await prisma.product.findMany({
+      where: { tenantId },
+      orderBy: { createdAt: 'desc' },
+      take: limit,
+    });
+
+    return products.map((p: any) => ({
+      productId: p.id,
+      productTitle: p.title,
+      vendor: p.vendor || '',
+      price: p.price || 0,
+    }));
   }
 
   async getTopCustomers(tenantId: string, limit: number): Promise<TopCustomer[]> {
@@ -110,7 +133,7 @@ class MetricsServiceImpl implements IMetricsService {
     for (const order of orders) {
       const dateKey = order.createdAt.toISOString().split('T')[0];
       const existing = groupedByDate.get(dateKey) || { count: 0, revenue: 0 };
-      
+
       groupedByDate.set(dateKey, {
         count: existing.count + 1,
         revenue: existing.revenue + order.totalPrice,
