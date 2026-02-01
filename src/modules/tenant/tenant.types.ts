@@ -8,6 +8,7 @@ export interface Tenant {
 
 export interface TenantService {
   registerTenant(shopName: string, accessToken: string): Promise<Tenant>;
+  registerOrUpdateTenant(shopName: string, accessToken: string): Promise<Tenant>;
   getTenantById(id: string): Promise<Tenant | null>;
   getTenantByShopName(shopName: string): Promise<Tenant | null>;
   getAllTenants(): Promise<Tenant[]>;
