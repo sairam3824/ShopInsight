@@ -1,6 +1,7 @@
 import { Router, Response } from 'express';
 import { metricsService } from '../modules/analytics/metrics.service';
 import { authMiddleware, AuthRequest } from '../middleware/auth.middleware';
+import prisma from '../config/database';
 
 const router = Router();
 
@@ -103,6 +104,54 @@ router.get('/orders', async (req: AuthRequest, res: Response) => {
       error: {
         code: 'INTERNAL_SERVER_ERROR',
         message: 'Failed to fetch orders',
+      },
+    });
+  }
+});
+
+// GET /api/analytics/export-orders
+router.get('/export-orders', authMiddleware, async (req: AuthRequest, res: Response) => {
+  try {
+    const tenantId = req.session!.tenantId;
+    const { from, to } = req.query;
+
+    let where: any = { tenantId };
+    if (from && to) {
+      where.createdAt = {
+        gte: new Date(from as string),
+        lte: new Date(to as string),
+      };
+    }
+
+    const orders = await prisma.order.findMany({
+      where,
+      include: {
+        customer: true,
+      },
+      orderBy: {
+        createdAt: 'desc',
+      },
+    });
+
+    // Simple CSV generation
+    const header = 'Order ID,Customer,Email,Total Price,Currency,Date\n';
+    const rows = orders.map((order: any) => {
+      const customerName = order.customer ? `${order.customer.firstName || ''} ${order.customer.lastName || ''}`.trim() : 'Unknown';
+      const customerEmail = order.customer ? order.customer.email : '';
+      return `${order.id},"${customerName}",${customerEmail},${order.totalPrice},${order.currency},${order.createdAt.toISOString()}`;
+    }).join('\n');
+
+    const csv = header + rows;
+
+    res.setHeader('Content-Type', 'text/csv');
+    res.setHeader('Content-Disposition', `attachment; filename=orders-${new Date().toISOString().split('T')[0]}.csv`);
+    res.status(200).send(csv);
+  } catch (error) {
+    console.error('Export orders error:', error);
+    res.status(500).json({
+      error: {
+        code: 'INTERNAL_SERVER_ERROR',
+        message: 'Failed to export orders',
       },
     });
   }
